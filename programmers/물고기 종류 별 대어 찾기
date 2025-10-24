@@ -9,7 +9,7 @@
 
 
 -- CTE를 활용한 풀이
-
+```sql
  WITH A AS
  (
      SELECT *,
