@@ -1,0 +1,36 @@
+/* 학습 목표: SUM, MAX, MIN 함수 활용하기 */
+
+/* 문제: 
+물고기 종류 별로 가장 큰 물고기의 ID, 물고기 이름, 길이를 출력하는 SQL 문을 작성해주세요.
+물고기의 ID 컬럼명은 ID, 이름 컬럼명은 FISH_NAME, 길이 컬럼명은 LENGTH로 해주세요.
+결과는 물고기의 ID에 대해 오름차순 정렬해주세요.
+단, 물고기 종류별 가장 큰 물고기는 1마리만 있으며 10cm 이하의 물고기가 가장 큰 경우는 없습니다.
+*/
+
+
+-- CTE를 활용한 풀이
+
+ WITH A AS
+ (
+     SELECT *,
+            RANK() OVER(PARTITION BY FISH_TYPE ORDER BY LENGTH DESC) AS SR
+       FROM FISH_INFO
+      WHERE LENGTH IS NOT NULL
+ ),
+ B AS
+ (
+     SELECT *
+       FROM A
+      WHERE SR = 1
+ )
+ SELECT ID, 
+        FISH_NAME,
+        LENGTH
+   FROM B
+   LEFT JOIN FISH_NAME_INFO
+     ON B.FISH_TYPE = FISH_NAME_INFO.FISH_TYPE
+ ORDER BY ID ASC;
+
+
+-- MAX() 활용한 풀이
+
