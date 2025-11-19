@@ -1,0 +1,47 @@
+-- 코드를 작성해주세요
+# WITH A AS
+# (
+#     SELECT ed_1.ID AS ID, 
+#            ed_1.PARENT_ID AS PID_1
+#       FROM ECOLI_DATA AS ed_1
+#       LEFT JOIN ECOLI_DATA AS ed_2
+#         ON ed_1.PARENT_ID = ed_2.ID
+# )
+# ,B AS
+# (
+#     SELECT A.ID, 
+#            A.PID_1,
+#            PARENT_ID AS PID_2
+#       FROM A 
+#       LEFT JOIN ECOLI_DATA AS ed_2
+#         ON A.PID_1 = ed_2.ID
+# )
+# SELECT B.ID, 
+#        B.PID_1, 
+#        B.PID_2,
+#        PARENT_ID AS PID_3
+#   FROM B
+#   LEFT JOIN ECOLI_DATA AS ed_2
+#     ON B.PID_2 = ed_2.ID;
+
+
+
+WITH RECURSIVE PARENT AS (
+    SELECT ID, PARENT_ID, 0 DEPTH
+      FROM ECOLI_DATA
+     WHERE PARENT_ID IS NULL
+
+    UNION ALL
+
+    SELECT ED.ID, ED.PARENT_ID, P.DEPTH + 1 DEPTH
+      FROM PARENT P
+      LEFT OUTER JOIN ECOLI_DATA ED
+        ON P.ID = ED.PARENT_ID
+     WHERE P.ID IS NOT NULL
+)   
+SELECT 
+       COUNT(1) AS COUNT, DEPTH GENERATION
+  FROM PARENT
+ WHERE ID IS NULL
+ GROUP BY ID, DEPTH
+ ORDER BY DEPTH
