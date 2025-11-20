@@ -19,5 +19,12 @@ SELECT CATEGORY, PRICE, PRODUCT_NAME
  ORDER BY PRICE DESC ;   
 
 
-
-
+/* 다른 방법: MAX() 함수 + GROUP BY */
+SELECT * 
+  FROM FOOD_PRODUCT FP
+  LEFT JOIN (SELECT CATEGORY, MAX(PRICE) AS MAX_PRICE         -- FOOD_PRODUCT에서 카테고리별로 가장 높은 가격 추출 & 동일한 가격으로 조인
+               FROM FOOD_PRODUCT
+               GROUP BY CATEGORY) SUB
+    ON FP.PRIC = SUB.MAX_PRICE
+ WHERE FP.CATEGORY IN ('과자','국','김치','식용유')
+ ORDER BY MAX_PRICE DESC;
