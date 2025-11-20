@@ -1,6 +1,9 @@
 # [level 4] 식품분류별 가장 비싼 식품의 정보 조회하기 - 131116 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/131116) 
+- 체감 난이도: 하
+- 문제 풀이 방식: RANK() 윈도우 함수 활용
+- 다른 풀이 방식: MAX() 함수 + GROUP BY 를 활용한 방식
 
 ### 성능 요약
 
