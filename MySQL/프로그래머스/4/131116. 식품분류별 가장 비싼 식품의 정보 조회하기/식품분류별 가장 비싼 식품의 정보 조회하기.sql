@@ -1,0 +1,23 @@
+/* 문제
+- 식품분류별로 가격이 제일 비싼 식품
+- CATEGORY, PRICE, PRODUCT_NAME
+- WHERE CATEGORY IN ('과자','국','김치','식용유')
+- ORDER BY PRICE DESC
+
+*/
+WITH A AS
+(
+    SELECT *,
+           RANK() OVER (PARTITION BY CATEGORY ORDER BY PRICE DESC) AS PR
+      FROM FOOD_PRODUCT
+)
+SELECT CATEGORY, PRICE, PRODUCT_NAME
+  FROM A
+ WHERE 1=1 
+       AND PR = 1 
+       AND CATEGORY IN ('과자','국','김치','식용유')
+ ORDER BY PRICE DESC ;   
+
+
+
+
