@@ -1,5 +1,8 @@
 # [level 4] 서울에 위치한 식당 목록 출력하기 - 131118 
 
+- 체감난이도: 중하
+- 이슈: 두 방법 모두 가능해야 하는데, 첫번째 방식이 작동하지 않음.
+
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/131118?language=mysql) 
 
 ### 성능 요약
