@@ -1,5 +1,9 @@
 # [level 4] 5월 식품들의 총매출 조회하기 - 131117 
 
+- 체감 난이도: 하
+- Takeaway 1: JOIN은 반드시 FROM 절 바로 뒤에서 진행. 첫번째 Trial 때 WHERE 절 뒤에서 진행했다가 오류 발생
+- Takeaway 2: DATE 처리 더 유연하게 할 것
+
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/131117) 
 
 ### 성능 요약
