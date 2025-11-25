@@ -1,5 +1,8 @@
 # [level 4] 오프라인/온라인 판매 데이터 통합하기 - 131537 
 
+- 체감 난이도: 중
+- 깨달은 점: 두개의 테이블을 UNION 또는 UNION ALL로 통합하려고 할 때, 한 테이블에는 A라는 열이 있는데, 다른 테이블에는 A라는 열이 없을 때. 이때, SELECT ... NULL AS A, ... 라고 해주면 된다는 것을 이 문제를 통해서 알았다! 
+
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/131537) 
 
 ### 성능 요약
