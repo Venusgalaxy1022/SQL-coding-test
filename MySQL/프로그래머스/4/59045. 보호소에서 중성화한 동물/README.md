@@ -1,5 +1,10 @@
 # [level 4] 보호소에서 중성화한 동물 - 59045 
 
+- 체감 난이도: 하
+- 막혔던 지점: 또는 조건을 괄호로 묶는 것!
+  (AO.SEX_UPON_OUTCOME LIKE '%Spayed%' 
+ OR AO.SEX_UPON_OUTCOME LIKE '%Neutered%') 
+
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/59045) 
 
 ### 성능 요약
