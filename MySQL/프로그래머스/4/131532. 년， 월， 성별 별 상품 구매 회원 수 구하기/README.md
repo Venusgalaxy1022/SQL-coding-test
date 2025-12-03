@@ -1,4 +1,6 @@
 # [level 4] 년, 월, 성별 별 상품 구매 회원 수 구하기 - 131532 
+- 체감 난이도: 하
+- 주의할 것: COUNT(DISTINCT USER_ID) 와 같이 COUNT와 DISTINCT를 함께 쓸 때, 괄호 잊지 않기!! 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/131532) 
 
