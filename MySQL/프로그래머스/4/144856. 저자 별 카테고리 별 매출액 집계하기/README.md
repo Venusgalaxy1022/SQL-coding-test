@@ -1,4 +1,5 @@
 # [level 4] 저자 별 카테고리 별 매출액 집계하기 - 144856 
+- 체감 난이도: 하
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/144856) 
 
