@@ -1,5 +1,8 @@
 # [level 4] 우유와 요거트가 담긴 장바구니 - 62284 
 
+- 체감 난이도: 중
+- 문제 푸는데 오래 걸렸던 이유는 잦은 구문 오류 (e.g., SELECT 절 후에 칼럼이 하나밖에 없는 comma를 씀); CTE를 두번 쓴 경우, 한번만 쓴 경우, CTE를 쓰지 않고 Subquery로 해결한 경우 이렇게 세가지 접근 방식으로 풀었기 때문
+
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/62284) 
 
 ### 성능 요약
